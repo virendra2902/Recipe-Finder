@@ -1,0 +1,221 @@
+
+.meal-card{
+    height: 190px;
+    width: 190px !important;
+    box-shadow: 2px 3px 6px rgba(138, 37, 3, 0.5);
+}
+.meal-name{
+    position: relative;
+    left: 45%;
+    bottom: 166px !important;
+    background-color: #eef2f3;
+    border-radius: 50px;
+    color: #672806;
+    text-align: center;
+    font-size: 12px;
+    width: 90px;
+    font-weight: 700;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+.content img{
+    width: 100%;
+    height: 600px;
+}  
+.content .inner-content{
+    background-color: rgba(255,255,255,0.8);
+    color: black;
+    font-size: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    position: absolute;
+    top:45%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 5px 5px rgba(0,0,0,05);
+}
+.recipe-details{
+    width: 70%;
+    margin:2rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ingredients,.instructions{
+    flex-basis: 50%;
+    text-align: justify;
+}
+.ingredients h4{
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+.video{
+    width: 80%;
+    margin: 3rem auto;
+}
+.indexContainer{
+    display: flex;
+    margin: 2.5rem 0;
+}
+.numBox {
+    width: 50px;
+    height: 40px;
+    background-color: #030e12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 0 5px 0 5px;
+}
+.catagories-display{
+    width: 100%;
+}
+.line{
+    height: 3px;
+    width: 50px;
+    background-color: #f25f10;
+}
+.catagorioes{
+    display: list-item;
+    list-style: none;
+}
+.catagories-card{
+    height: 130px;
+    width: 190px !important;
+    box-shadow: 2px 3px 6px rgba(138, 37, 3, 0.5);
+}
+.catagory-name{
+    position: relative;
+    left: 48%;
+    bottom: 106px;
+    background-color: #eef2f3;
+    border-radius: 50px;
+    color: #672806;
+    text-align: center;
+    font-size: 12px;
+    width: 90px;
+    font-weight: 700;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+@media (max-width : 767px) {
+    .catagories-display{
+        justify-content: center !important;
+    }
+}
+.ingredient-card{
+    height: 190px;
+    width: 190px !important;
+    box-shadow: 2px 3px 6px rgba(138, 37, 3, 0.5);
+}
+.ingredient-name{
+    position: relative;
+    left: 48%;
+    bottom: 166px;
+    background-color: #eef2f3;
+    border-radius: 50px;
+    color: #672806;
+    text-align: center;
+    font-size: 12px;
+    width: 90px;
+    font-weight: 700;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+.country-card{
+    box-shadow: 2px 3px 6px rgba(138, 37, 3, 0.5);
+}
+.country-name{
+    position: relative;
+    left: 59%;
+    bottom: 140px;
+    background-color: #eef2f3;
+    border-radius: 50px;
+    color: #672806;
+    text-align: center;
+    font-size: 12px;
+    width: 90px;
+    font-weight: 700;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+@media (max-width : 1024px) {
+    .country-name{
+        position: relative;
+        left: 40%;
+        bottom: 90px;
+        background-color: #eef2f3;
+        border-radius: 50px;
+        color: #672806;
+        text-align: center;
+        font-size: 12px;
+        width: 90px;
+        font-weight: 700;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
+    
+}
+@media (max-width : 768px) {
+    .country-name{
+        position: relative;
+        left: 50%;
+        bottom: 120px;
+        background-color: #eef2f3;
+        border-radius: 50px;
+        color: #672806;
+        text-align: center;
+        font-size: 12px;
+        width: 90px;
+        font-weight: 700;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
+}
+@media (max-width : 426px) {
+    .country-name{
+        position: relative;
+        left: 70%;
+        bottom: 220px;
+        background-color: #eef2f3;
+        border-radius: 50px;
+        color: #672806;
+        text-align: center;
+        font-size: 12px;
+        width: 90px;
+        font-weight: 700;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
+}
+@media (max-width : 426px) {
+    .country-name{
+        position: relative;
+        left: 70%;
+        bottom: 200px;
+        
+    }
+}
+@media (max-width : 320px) {
+    .country-name{
+        position: relative;
+        left: 60%;
+        bottom: 160px;
+    }
+}
+.cuision{
+    padding: 10px;
+}
+.topButton[disabled] {
+    display: none;
+}
+.NutritionAnalysisHeader{
+    height: 500px;
+    width: 100%;
+    margin-top: 8%;
+}
+.sub-content-div{
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 5px;
+    height: 200px;
+    width: 700px;
+}
+.Content-div{
+    background-image: url('../NutritionAnalysis.jpg');
+    height: 90vh;
+}
+
+  

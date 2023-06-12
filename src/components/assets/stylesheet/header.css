@@ -1,0 +1,203 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif;
+}
+
+.header {
+    background-image: url('../backgroundnumber1.jpg');
+    background-size: cover;
+    height: 90vh;
+
+}
+.header2{
+    background-image: url('../recipeingredents.jpg');
+    background-size: cover;
+    height: 90vh;
+}
+
+.navbar {
+    padding: 10px;
+}
+
+.navbar ul {
+    margin-left: 300px;
+    padding: 10px;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar li {
+    position: relative;
+    margin-left: 20px;
+}
+
+.navbar>ul>li {
+    position: relative;
+    white-space: nowrap;
+    padding: 8px 0 8px 20px;
+}
+
+.navbar .nav-link,
+.navbar .nav-link:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 19px;
+    color: #2c4964;
+    white-space: nowrap;
+    padding: 5px 2px;
+}
+
+.navbar .nav-link i,
+.navbar .nav-link:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+}
+
+@media (max-width : 1024px) {
+    .navbar .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 15px;
+        color: #2c4964;
+        white-space: nowrap;
+        transition: 0.3s;
+        padding: 5px 2px;
+    }
+
+    .header {
+        background-image: url('../backgroundnumber1.jpg');
+        background-size: cover;
+        height: 60vh;
+    }
+}
+
+@media (max-width:768px) {
+    .navbar {
+        padding: 10px;
+    }
+    .header {
+        background-image: url('../backgroundnumber1.jpg');
+        background-size: cover;
+        height: 70vh;
+    }
+
+    .navbar ul {
+        margin-left: 30px;
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    .navbar li {
+        position: relative;
+    }
+}
+
+@media (max-width:400px) {
+    #logo {
+        width: 150px !important;
+    }
+}
+
+/*------sreach Bbar Css-------*/
+.searchBox {
+    position : absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, 50%);
+    background: #f3eeee;
+    height: 60px;
+    width: 310px;
+    border-radius: 40px;
+    padding: 10px;
+    border: 2px solid #444444;
+}
+.searchButton {
+    color: rgb(224, 119, 15);
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0c0401;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: rgb(16, 15, 15);
+    font-size: 18px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 200px;
+}
+@media (max-width : 1024px) {
+    .searchBox {
+        top: 30%;
+        left: 35%;
+    }
+}
+@media (max-width : 768px) {
+    .searchBox {
+        top: 30%;
+        left: 30%;
+    }
+}
+@media (max-width : 430px) {
+    .searchBox {
+        top: 30%;
+        left: 12%;
+    }
+}
+@media (max-width : 375px) {
+    .searchBox {
+        top: 30%;
+        left: 5%;
+    }
+}
+@media (max-width : 320px) {
+    .searchBox {
+        top: 30%;
+        left: 1% !important;
+    }
+}
+.top{
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 10 !important;
+}
+.topButton {
+    color: rgb(224, 119, 15);
+    float: right;
+    font-size: 19px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #0c0401;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    
+}
+
