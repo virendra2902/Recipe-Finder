@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import './assets/stylesheet/header.css'
-import logo from './assets/foodrecipelogo.png'
-import './assets/stylesheet/style1.css'
-import CatagoriesCard from './catagories/CatagoriesCard';
-import CountryCuisineCard from './cuision/CountryCuisineCard';
 import OwlCarousel from 'react-owl-carousel';
+import { Link } from 'react-router-dom';
+
+// Imported Stylesheets 
+import './assets/stylesheet/header.css'
+import './assets/stylesheet/style1.css'
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
-// Images Of Countries
+// Imported Components
+import CatagoriesCard from './catagories/CatagoriesCard';
+import CountryCuisineCard from './cuision/CountryCuisineCard';
+
+// Imported Images Of Countries
+import logo from './assets/foodrecipelogo.png'
 import Turkish from './assets/turkish.png';
 import Thai from './assets/thai.png';
 import Russian from './assets/russian.png';
@@ -16,10 +21,13 @@ import Indian from './assets/indian.png';
 import Greek from './assets/greek.png';
 import Kenyan from './assets/Kenyan.png';
 import Polish from './assets/polish.png';
-import { Link } from 'react-router-dom';
 
 const MainContent = ({ searchValue }) => {
     const [navbarColor, setNavbarColor] = useState(false);
+    const [show, setShow] = useState(false);
+    const [item, setItem] = useState("");
+    const [data, saveData] = useState([]);
+
     const handleScroll = () => {
         if (window.scrollY > 15) {
             setNavbarColor(true);
@@ -27,6 +35,7 @@ const MainContent = ({ searchValue }) => {
             setNavbarColor(false);
         }
     };
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -56,21 +65,18 @@ const MainContent = ({ searchValue }) => {
         },
     };
 
-    const [show, setShow] = useState(false);
-    const [item, setItem] = useState("");
-    const [data, saveData] = useState([]);
-
     useEffect(() => {
         const categoriesUrl = `https://www.themealdb.com/api/json/v1/1/categories.php`;
         fetch(categoriesUrl)
-          .then(response => response.json())
-          .then(data => {
-            saveData(data.categories);
-          })
-          .catch(error => {
-            console.error("Error:", error);
-          });
-      }, []);
+            .then(response => response.json())
+            .then(data => {
+                saveData(data.categories);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    }, []);
+
     useEffect(() => {
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`;
         fetch(url)
@@ -93,7 +99,7 @@ const MainContent = ({ searchValue }) => {
                     <div className="collapse navbar-collapse" id="navbarText">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link to='/'  className="nav-link">Home</Link>
+                                <Link to='/' className="nav-link">Home</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to='/NutritionAnalysis' className="nav-link">Nuritions</Link>
@@ -106,13 +112,13 @@ const MainContent = ({ searchValue }) => {
                 </div>
             </nav>
             <div className='main'>
-                <div className='catagorioes' data-aos="fade-up" data-aos-duration="3000">
+                <div className='catagorioes' data-aos="fade-up">
                     <div className='mb-4 ms-5 mt-5'>
                         <h2 className='' style={{ color: '#642605' }}>Categories</h2>
                         <div className='line ms-1'></div>
                     </div>
                     <div className='d-flex flex-wrap justify-content-center catagories-display'>
-                        {show ? <CatagoriesCard catagories={data}/> : <p>Not Found</p>}
+                        {show ? <CatagoriesCard catagories={data} /> : <p>Not Found</p>}
                     </div>
                 </div>
                 <div className='catagorioes'>
@@ -122,12 +128,13 @@ const MainContent = ({ searchValue }) => {
                             <div className='line ms-1'></div>
                         </div>
                     </div>
+                    {/* USe of Owl-Carousel  */}
                     <div className='d-flex flex-wrap justify-content-center catagories-display cuision'>
                         <OwlCarousel className='owl-theme' {...options} >
                             <Link to='/TurkishCuision'><CountryCuisineCard image={Turkish} title='Turkish' /></Link>
                             <Link to='/ThaiCuision'><CountryCuisineCard image={Thai} title='Thai' /></Link>
                             <Link to='/RussianCuision'><CountryCuisineCard image={Russian} title='Russian' /></Link>
-                            <Link to='/IndianCuision'><CountryCuisineCard image={Indian} title='Indian'/></Link>
+                            <Link to='/IndianCuision'><CountryCuisineCard image={Indian} title='Indian' /></Link>
                             <Link to='/GreekCuision'><CountryCuisineCard image={Greek} title='Greek' /></Link>
                             <Link to='/KenyanCuision'><CountryCuisineCard image={Kenyan} title='Kenyan' /></Link>
                             <Link to='/PolishCuision'><CountryCuisineCard image={Polish} title='Polish' /></Link>

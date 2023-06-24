@@ -1,10 +1,16 @@
 import React from 'react'
-import '../assets/stylesheet/header.css'
-import logo from '../assets/foodrecipelogo.png'
-import '../assets/stylesheet/style1.css'
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react'
+
+//Imported CSS Files
+import '../assets/stylesheet/header.css'
+import '../assets/stylesheet/style1.css'
+
+//Imported Components
 import NutritionAnalysisResult from './NutritionAnalysisResult';
+
+//Imported Images
+import logo from '../assets/foodrecipelogo.png'
 
 const NutritionAnalysis = () => {
     const [navbarColor, setNavbarColor] = useState(false);
@@ -17,28 +23,37 @@ const NutritionAnalysis = () => {
     };
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-            window.removeEventListener('scroll', handleScroll);
-    }, []);
-    document.addEventListener('DOMContentLoaded', () => {
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+    
+      useEffect(() => {
         const topButton = document.querySelector('.topButton');
-        const topDiv = document.querySelector('.top');
-      
-        topButton.addEventListener('click', () => {
+    
+        const scrollToTop = () => {
           window.scrollTo({
             top: 0,
-            left: 0,
-            behavior: 'smooth'
+            behavior: 'smooth',
           });
-        });
-      
-        window.addEventListener('scroll', () => {
+        };
+    
+        const handleScrollButton = () => {
           if (window.pageYOffset === 0) {
             topButton.disabled = true;
           } else {
             topButton.disabled = false;
           }
-        });
-      });
+        };
+    
+        topButton.addEventListener('click', scrollToTop);
+        window.addEventListener('scroll', handleScrollButton);
+    
+        return () => {
+          topButton.removeEventListener('click', scrollToTop);
+          window.removeEventListener('scroll', handleScrollButton);
+        };
+      }, []);
       
     return (
         <div>

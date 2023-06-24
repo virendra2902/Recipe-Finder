@@ -1,4 +1,6 @@
 import React from 'react'
+
+//Imported CSS Files
 import '../assets/stylesheet/style1.css'
 
 const CountryCuisineCard = (props) => {

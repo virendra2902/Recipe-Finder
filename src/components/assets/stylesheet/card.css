@@ -45,6 +45,7 @@
 .category {
   font-weight: bold;
 }
+
 .tags h6 {
   font-size: 16px;
 }
@@ -161,6 +162,14 @@
   .meal-content-div {
     padding-left: 5% !important;
   }
+
+  .content {
+    margin-top: 8% !important;
+  }
+
+  #catagoryfullpagecontent{
+    margin-top: 8% !important;
+  }
 }
 
 @media (max-width : 769px) {
@@ -180,6 +189,12 @@
     margin-top: 2% !important;
     padding-left: 0% !important;
   }
+
+  .content {
+    margin-top: 8% !important;
+  }
+
+  
 }
 
 @media (max-width : 425px) {
@@ -196,6 +211,12 @@
   #img-meal {
     width: 200px !important;
   }
+
+  .content {
+    margin-top: 8% !important;
+  }
+
+
 }
 
 .videobtn {
